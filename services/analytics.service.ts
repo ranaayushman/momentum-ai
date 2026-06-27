@@ -109,8 +109,6 @@ class AnalyticsService extends BaseService {
       const dates = pastNDays(7);
       const weekStart = dates[0];
 
-      // Fetch all tasks completed in the window
-      const allTasksResult = await taskRepository.getTasksByUser(userId, { limitCount: 500 });
       const plans = await dailyPlanRepository.getPlanHistory(userId, 7);
 
       const planMap = new Map(plans.map((p) => [p.date, p]));

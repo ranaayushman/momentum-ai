@@ -5,14 +5,14 @@
 // No AI. No Gemini. Pure business rules.
 // ============================================================
 
-import { Task, TaskPriority, TaskStatus, DailyPlan, TimeBlock } from '@/types';
+import { Task, TaskPriority, TaskStatus, DailyPlan } from '@/types';
 import {
   taskRepository,
   dailyPlanRepository,
   DocumentNotFoundError,
 } from '@/repositories';
 import { BaseService } from './base.service';
-import { NotFoundError } from './errors';
+
 
 // ─── Output Types ─────────────────────────────────────────────
 

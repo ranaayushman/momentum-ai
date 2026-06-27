@@ -12,7 +12,7 @@ import {
 } from '@/repositories';
 import { TaskQueryOptions } from '@/repositories/task.repository';
 import { BaseService } from './base.service';
-import { ValidationError, NotFoundError, OperationFailedError } from './errors';
+import { ValidationError, NotFoundError } from './errors';
 
 // ─── Input DTOs ───────────────────────────────────────────────
 
@@ -257,8 +257,8 @@ class TaskService extends BaseService {
         createdAt: now,
         updatedAt: now,
       };
-      // Remove id from the spread
-      const { id: _id, ...duplicateWithoutId } = duplicate as Task;
+      const { id: _unusedId, ...duplicateWithoutId } = duplicate as Task;
+      void _unusedId;
       return taskRepository.createTask(duplicateWithoutId);
     });
   }
