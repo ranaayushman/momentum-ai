@@ -3,9 +3,8 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { AuthContext } from './auth-context';
 import { authService, FirebaseUser } from '@/services/auth.service';
-import { AuthError, AuthState } from './auth-types';
+import { AuthState } from './auth-types';
 import { mapDbUserToAppUser, mapFirebaseError } from './auth-utils';
-import { User as AppUser } from '@/types';
 
 interface AuthProviderProps {
   children: ReactNode;
